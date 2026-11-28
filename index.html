@@ -8,7 +8,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
 <style>
-:root{--paper:#fcfcfb;--sage:#eaf1ed;--peach:#fdf3e9;--green:#0b4d4a;--green2:#073a38;--orange:#d9822b;--maroon:#801d38;--ink:#1b2826;--mute:#556360;--cream:#fbf8f2;
+:root{--paper:#fcfcfb;--sage:#f3f6f4;--peach:#fcf6f0;--green:#1b6351;--green2:#134d3e;--green-accent:#228062;--orange:#d9822b;--maroon:#801d38;--maroon2:#66142a;--maroon-soft:#fbf1f4;--ink:#1f2826;--headings:#1a2b27;--mute:#556360;--cream:#fbf8f2;
 --serif:'Fraunces',Georgia,serif;--sans:'Inter',system-ui,sans-serif}
 *{box-sizing:border-box;margin:0}
 body{background:var(--paper);color:var(--ink);font:400 16px/1.6 var(--sans);overflow-x:hidden}
@@ -17,7 +17,7 @@ a{color:inherit}
 .wrap{max-width:1200px;margin:0 auto;padding:0 28px;position:relative}
 .kicker{font:600 12px/1 var(--sans);letter-spacing:.14em;text-transform:uppercase;color:var(--orange)}
 h1,h2,h3{font-family:var(--serif);font-weight:500;line-height:1.1;letter-spacing:-.01em}
-h2{font-size:clamp(28px,3.2vw,42px);color:var(--green)}
+h2{font-size:clamp(28px,3.2vw,42px);color:var(--headings)}
 em{font-style:italic;color:var(--maroon)}
 .btn{display:inline-block;background:var(--green);color:#fff;padding:11px 24px;font-size:14px;font-weight:500;text-decoration:none;border-radius:99px;transition:background-color .28s cubic-bezier(.22,1,.36,1),color .28s cubic-bezier(.22,1,.36,1),box-shadow .28s cubic-bezier(.22,1,.36,1)}
 .btn:hover{background:var(--green2)}
@@ -41,45 +41,155 @@ em{font-style:italic;color:var(--maroon)}
 .sep.f{transform:scaleX(-1)}
 
 nav .wrap{display:flex;align-items:center;justify-content:space-between;height:68px}
-.brand{display:flex;align-items:center;gap:12px;font:500 19px var(--serif);color:var(--green);text-decoration:none;transition:opacity .25s ease}
+.brand{display:flex;align-items:center;gap:12px;font:500 19px var(--serif);color:var(--headings);text-decoration:none;transition:opacity .25s ease}
 .brand-logo{width:46px;height:46px;border-radius:50%;object-fit:cover;flex-shrink:0;box-shadow:0 1px 4px rgba(0,0,0,0.15);background:#fff}
 .brand:hover{opacity:.85}
 .brand:focus-visible{outline:2px solid var(--orange);outline-offset:4px;border-radius:4px}
 .brand small{display:block;font:500 10px var(--sans);letter-spacing:.14em;color:var(--mute)}
 nav ul{display:flex;gap:28px;list-style:none;padding:0;font-size:14px}
 nav ul a{text-decoration:none;position:relative;padding:4px 0;transition:color .25s ease}
-nav ul a::after{content:"";position:absolute;left:0;bottom:0;width:100%;height:1.5px;background:var(--orange);transform:scaleX(0);transform-origin:right;transition:transform .3s cubic-bezier(.22,1,.36,1)}
-nav ul a:hover{color:var(--green)}
+nav ul a::after{content:"";position:absolute;left:0;bottom:0;width:100%;height:2px;background:var(--maroon);transform:scaleX(0);transform-origin:right;transition:transform .3s cubic-bezier(.22,1,.36,1)}
+nav ul a:hover{color:var(--maroon)}
 nav ul a:hover::after{transform:scaleX(1);transform-origin:left}
 nav ul a:focus-visible{outline:2px solid var(--orange);outline-offset:4px;border-radius:3px}
 @media(max-width:760px){nav ul{display:none}}
 
-/* A hero */
-.hero .wrap{display:grid;grid-template-columns:1fr 1.1fr;gap:40px;align-items:center;min-height:min(560px,calc(100vh - 68px));padding-top:10px;padding-bottom:20px}
-.hero .wrap>div:first-child{animation:heroTextIn .65s cubic-bezier(.22,1,.36,1) both}
-.hero h1{font-size:clamp(36px,4.6vw,58px);color:var(--green);margin:18px 0 18px}
-.hero .lead{font-size:17px;color:var(--mute);max-width:46ch}
-.cta{display:flex;gap:12px;margin:24px 0 26px;flex-wrap:wrap}
-.areas{display:flex;flex-wrap:wrap;gap:6px 18px;font-size:13px;color:var(--mute)}
-.areas span::before{content:"";display:inline-block;width:7px;height:7px;background:var(--orange);margin-right:8px;border-radius:50%}
-.comp{position:relative;height:min(500px,60vh)}
-.comp>*{position:absolute}
-.comp .sh{animation:heroPhotoIn .85s cubic-bezier(.22,1,.36,1) both}
-.comp .sh img{animation:heroImgSettle .95s cubic-bezier(.22,1,.36,1) both}
-.comp .c1{left:24%;top:0;width:48%;height:100%;animation-delay:.04s}
-.comp .c1 img{animation-delay:.04s}
-.comp .c2{right:0;top:2%;width:30%;aspect-ratio:1;animation-delay:.14s}
-.comp .c2 img{animation-delay:.14s}
-.comp .c3{left:0;bottom:3%;width:32%;aspect-ratio:1;box-shadow:0 0 0 8px var(--paper);animation-delay:.22s}
-.comp .c3 img{animation-delay:.22s}
-.comp .dot{right:10%;bottom:6%;width:62px;height:62px;border-radius:50%;background:var(--orange)}
-.comp .ring{left:12%;top:4%;width:90px;height:90px;border-radius:50%;border:2px dashed var(--green);opacity:.4}
-.comp .badge{right:26%;bottom:-2%;width:110px;height:110px;border-radius:50%;background:var(--green);color:#fff;display:grid;place-content:center;text-align:center;font:500 12px/1.2 var(--serif);box-shadow:0 0 0 7px var(--paper);z-index:2;animation:heroTextIn .7s cubic-bezier(.22,1,.36,1) .24s both}
-.badge b{font-size:34px;display:block}
-@keyframes heroTextIn{from{opacity:0}to{opacity:1}}
-@keyframes heroPhotoIn{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:none}}
+/* A hero - Exact Reference Mockup Organic Split */
+.hero {
+  position: relative;
+  background: var(--paper);
+  overflow: hidden;
+  padding: 0;
+}
+.hero-inner {
+  max-width: 1360px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1.05fr 1.25fr;
+  min-height: 520px;
+  align-items: stretch;
+  position: relative;
+}
+.hero-text-col {
+  padding: 48px 36px 56px 40px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  z-index: 10;
+  animation: heroTextIn .65s cubic-bezier(.22,1,.36,1) both;
+}
+.hero h1 {
+  font-family: var(--serif);
+  font-size: clamp(38px, 4.2vw, 54px);
+  color: var(--headings);
+  font-weight: 600;
+  line-height: 1.15;
+  margin: 0 0 16px;
+  letter-spacing: -0.015em;
+}
+.hero .hero-accent-bar {
+  width: 52px;
+  height: 3.5px;
+  background: var(--orange);
+  border-radius: 2px;
+  margin: 0 0 20px;
+}
+.hero .lead {
+  font-size: 16.5px;
+  line-height: 1.62;
+  color: var(--mute);
+  max-width: 44ch;
+  margin-bottom: 28px;
+}
+.hero-cta {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+  align-items: center;
+}
+
+/* Right Photograph: Natural Full Bleed to right with Organic S-Curve boundary on left */
+.hero-photo-wrap {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  min-height: 440px;
+  overflow: hidden;
+  border-top-right-radius: 36px;
+}
+.hero-photo-wrap img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center 25%;
+  display: block;
+  animation: heroImgSettle .95s cubic-bezier(.22,1,.36,1) both;
+}
+
+/* Organic S-Curve SVG divider connecting the left paper background smoothly into the photo */
+.hero-photo-wrap .curve-mask {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: -2px;
+  height: 100%;
+  width: 140px;
+  color: var(--paper);
+  pointer-events: none;
+  z-index: 2;
+}
+.hero-photo-wrap .curve-accent-line {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: -2px;
+  height: 100%;
+  width: 140px;
+  color: rgba(217, 130, 43, 0.45);
+  pointer-events: none;
+  z-index: 3;
+}
+
+/* Bottom flowing wave connecting hero into metrics strip, exactly like the mockup */
+.hero-bottom-wave {
+  position: absolute;
+  bottom: -1px;
+  left: 0;
+  width: 100%;
+  height: 70px;
+  color: var(--paper);
+  pointer-events: none;
+  z-index: 5;
+}
+
+@keyframes heroTextIn{from{opacity:0;transform:translateY(6px)}to{opacity:1;transform:none}}
 @keyframes heroImgSettle{from{transform:scale(1.03)}to{transform:scale(1)}}
-@media(max-width:900px){.hero .wrap{grid-template-columns:1fr;min-height:0}.comp{height:380px}}
+
+@media (max-width: 960px) {
+  .hero-inner {
+    grid-template-columns: 1fr;
+    min-height: 0;
+  }
+  .hero-text-col {
+    padding: 36px 24px 28px;
+  }
+  .hero-photo-wrap {
+    height: 320px;
+    min-height: 320px;
+  }
+  .hero-photo-wrap .curve-mask, .hero-photo-wrap .curve-accent-line {
+    display: none;
+  }
+  .hero-bottom-wave {
+    height: 36px;
+  }
+}
+@media (max-width: 540px) {
+  .hero-photo-wrap {
+    height: 250px;
+    min-height: 250px;
+  }
+}
 
 /* B impact: highlight section */
 .impact{background:var(--green);color:var(--cream);padding:30px 0 40px}
@@ -120,7 +230,7 @@ nav ul a:focus-visible{outline:2px solid var(--orange);outline-offset:4px;border
 
 .more{background:var(--sage);padding:30px 0 38px}
 .more .wrap{display:grid;grid-template-columns:250px 1fr;gap:36px;align-items:start}
-.more h3{font-size:26px;color:var(--green);font-weight:600}
+.more h3{font-size:26px;color:var(--headings);font-weight:600}
 .more .sub{font-size:13.5px;color:var(--mute);margin-top:8px;line-height:1.5}
 .more .grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;list-style:none;padding:0}
 .more-item{background:#ffffff;border-radius:18px;padding:18px 20px;display:flex;align-items:flex-start;gap:14px;box-shadow:0 3px 12px rgba(11,77,74,0.06);border:1px solid rgba(11,77,74,0.08);transition:transform .24s ease,box-shadow .24s ease}
@@ -136,9 +246,9 @@ nav ul a:focus-visible{outline:2px solid var(--orange);outline-offset:4px;border
 .sdg-section{background:var(--paper);padding:20px 0 30px;position:relative}
 .sdg-section .hd{display:flex;justify-content:space-between;align-items:flex-end;flex-wrap:wrap;gap:24px;margin-bottom:36px;padding-bottom:20px;border-bottom:1.5px solid rgba(11,77,74,0.12)}
 .sdg-section .hd>div{max-width:640px}
-.sdg-section .hd .kicker{display:inline-flex;align-items:center;gap:8px;margin-bottom:8px;font-size:12.5px;letter-spacing:.14em}
-.sdg-section .hd .kicker::before{content:"";display:inline-block;width:8px;height:8px;border-radius:50%;background:var(--orange)}
-.sdg-section h2{font-size:clamp(28px,3.2vw,42px);color:var(--green);margin-top:6px}
+.sdg-section .hd .kicker{display:inline-flex;align-items:center;gap:8px;margin-bottom:8px;font-size:12.5px;letter-spacing:.14em;color:var(--maroon)}
+.sdg-section .hd .kicker::before{content:"";display:inline-block;width:8px;height:8px;border-radius:50%;background:var(--maroon)}
+.sdg-section h2{font-size:clamp(28px,3.2vw,42px);color:var(--headings);margin-top:6px}
 .sdg-section .hd p{font-size:14.5px;color:var(--mute);line-height:1.6;max-width:52ch}
 .discs{display:grid;grid-template-columns:repeat(2,1fr);gap:24px}
 
@@ -181,24 +291,24 @@ nav ul a:focus-visible{outline:2px solid var(--orange);outline-offset:4px;border
 .tabs button{all:unset;cursor:pointer;padding:9px 0 9px 26px;font:500 19px var(--serif);color:var(--mute);position:relative;transition:color .3s,padding .3s}
 .tabs button::before{content:"";position:absolute;left:0;top:50%;width:10px;height:10px;margin-top:-5px;border-radius:50%;border:1.5px solid var(--orange)}
 .tabs button:hover{color:var(--ink)}
-.tabs button[aria-selected=true]{color:var(--green);padding-left:32px}
-.tabs button[aria-selected=true]::before{background:var(--orange)}
+.tabs button[aria-selected=true]{color:var(--maroon);font-weight:600;padding-left:32px}
+.tabs button[aria-selected=true]::before{background:var(--maroon);border-color:var(--maroon)}
 .tabs button:focus-visible{outline:2px solid var(--orange);outline-offset:2px}
 .panel{display:grid;grid-template-columns:330px 1fr;gap:44px;align-items:center}
 .panel .pv{position:relative;height:400px}
 .panel .pv .sh{position:absolute;inset:0}
-.panel .pv .num{position:absolute;right:-26px;bottom:26px;width:118px;height:118px;border-radius:50%;background:var(--green);color:#fff;display:grid;place-content:center;text-align:center;font:500 24px/1 var(--serif);z-index:2;box-shadow:0 0 0 7px var(--peach)}
+.panel .pv .num{position:absolute;right:-26px;bottom:26px;width:118px;height:118px;border-radius:50%;background:var(--maroon);color:#fff;display:grid;place-content:center;text-align:center;font:500 24px/1 var(--serif);z-index:2;box-shadow:0 0 0 7px var(--peach)}
 .num small{font:400 11px/1.2 var(--sans);margin-top:5px;padding:0 10px;opacity:.9}
 .panel .nb{background:var(--maroon);display:grid;place-content:center;color:#fff;font:500 56px var(--serif);text-align:center}
 .nb small{font:400 14px var(--sans)}
-.panel h3{font-size:28px;color:var(--green);margin:10px 0}
+.panel h3{font-size:28px;color:var(--headings);margin:10px 0}
 .panel p{color:var(--mute);font-size:15px;max-width:44ch}
 .panel.is-switching .pv,.panel.is-switching>div:last-child{animation:panelSwap .42s cubic-bezier(.22,1,.36,1) both}
 .panel.is-switching .pv img{animation:heroImgSettle .55s cubic-bezier(.22,1,.36,1) both}
 @keyframes panelSwap{from{opacity:0;transform:translateY(6px)}to{opacity:1;transform:none}}
 @media(max-width:1000px){.stage,.panel{grid-template-columns:1fr}.tabs{flex-direction:row;overflow-x:auto;gap:18px}.tabs button{white-space:nowrap;font-size:16px}.panel .pv{max-width:330px;height:360px}}
 
-footer{background:var(--green);color:#b9cdbf;padding:6px 0 22px;font-size:12px}
+footer{background:#172220;color:#9bb0ab;padding:12px 0 24px;font-size:12.5px;border-top:2px solid var(--maroon)}
 
 /* Scroll reveal states (progressive enhancement) */
 .reveal-photo{opacity:0;transform:translateY(10px);transition:opacity .68s cubic-bezier(.22,1,.36,1),transform .68s cubic-bezier(.22,1,.36,1)}
@@ -300,7 +410,7 @@ footer{background:var(--green);color:#b9cdbf;padding:6px 0 22px;font-size:12px}
   font: 700 11.5px/1 var(--sans);
   letter-spacing: .14em;
   text-transform: uppercase;
-  color: var(--ink);
+  color: var(--maroon);
   position: relative;
   margin-bottom: 14px;
 }
@@ -309,14 +419,14 @@ footer{background:var(--green);color:#b9cdbf;padding:6px 0 22px;font-size:12px}
   display: block;
   width: 38px;
   height: 3.5px;
-  background: var(--orange);
+  background: var(--maroon);
   border-radius: 2px;
   margin-top: 8px;
 }
 .focus-header h2 {
   font-family: var(--serif);
   font-size: clamp(32px, 3.2vw, 42px);
-  color: var(--green);
+  color: var(--headings);
   font-weight: 600;
   line-height: 1.12;
 }
@@ -463,31 +573,50 @@ footer{background:var(--green);color:#b9cdbf;padding:6px 0 22px;font-size:12px}
 </div></nav>
 
 <!-- A · HERO -->
-<header class="hero"><div class="wrap">
-  <div>
-    <h1 style="color:var(--green);font-size:clamp(38px,4.5vw,56px);font-weight:600;line-height:1.15;margin-bottom:20px;">
-      Stronger<br>Communities.<br>Shared Futures.
-    </h1>
-    <div style="width:52px;height:4px;background:var(--orange);border-radius:2px;margin:18px 0 20px;"></div>
-    <p class="lead" style="font-size:17px;line-height:1.6;color:var(--mute);max-width:44ch;margin-bottom:28px;">
-      Working with communities towards education, a healthy environment and sustainable livelihoods.
-    </p>
-    <div class="cta">
-      <a class="btn" href="#focus-areas" style="display:inline-flex;align-items:center;gap:8px;background:var(--green);color:#fff;padding:12px 28px;border-radius:99px;font-weight:600;text-decoration:none;box-shadow:0 3px 10px rgba(11,77,74,0.25);">
-        <span>Explore Our Work</span>
-        <span style="font-size:16px;">&rarr;</span>
-      </a>
+<header class="hero">
+  <div class="hero-inner">
+    <!-- Left Column: Editorial Text & CTAs -->
+    <div class="hero-text-col">
+      <h1 style="color:var(--headings);font-size:clamp(38px,4.3vw,56px);font-weight:600;line-height:1.15;margin-bottom:18px;">
+        Stronger<br>Communities.<br>Shared Futures.
+      </h1>
+      <div class="hero-accent-bar"></div>
+      <p class="lead">
+        Working with communities towards education, a healthy environment and sustainable livelihoods.
+      </p>
+      <div class="hero-cta">
+        <a class="btn" href="#focus-areas" style="display:inline-flex;align-items:center;gap:8px;background:var(--green);color:#fff;padding:12px 28px;border-radius:99px;font-weight:600;text-decoration:none;box-shadow:0 3px 10px rgba(11,77,74,0.25);">
+          <span>Explore Our Work</span>
+          <span style="font-size:16px;">&rarr;</span>
+        </a>
+      </div>
+    </div>
+
+    <!-- Right Column: Integrated Community Photograph with Flowing Organic Wave -->
+    <div class="hero-photo-wrap">
+      <img
+        src="https://ppt-final.vercel.app/images/hero-children.jpg"
+        onerror="this.onerror=null; this.src='https://ppt-final.vercel.app/assets/img/cfi-children-activities-3.jpg';"
+        alt="Children participating in Praja Pragati Trust's educational and community development programme"
+      >
+
+      <!-- Organic S-Curve boundary smoothly merging left background into the photo -->
+      <svg class="curve-mask" viewBox="0 0 100 500" preserveAspectRatio="none" fill="currentColor" aria-hidden="true">
+        <path d="M0,0 L48,0 C82,125 14,245 58,380 C74,430 88,468 96,500 L0,500 Z" />
+      </svg>
+
+      <!-- Subtle warm accent line tracing the organic curve -->
+      <svg class="curve-accent-line" viewBox="0 0 100 500" preserveAspectRatio="none" fill="none" aria-hidden="true">
+        <path d="M48,0 C82,125 14,245 58,380 C74,430 88,468 96,500" stroke="currentColor" stroke-width="2" />
+      </svg>
     </div>
   </div>
-  <div class="comp">
-    <div class="ring"></div>
-    <div class="sh arch c1"><img src="https://ppt-final.vercel.app/assets/img/my-choice-svp-for-mothers-1.jpg" alt="Mothers’ meeting, Safe Village Programme"></div>
-    <div class="sh blob c2"><img src="https://ppt-final.vercel.app/assets/img/apf-5-layer-model-2.jpg" alt="Five Layer natural farming model"></div>
-    <div class="sh circ c3"><img src="https://ppt-final.vercel.app/assets/img/cfi-children-activities-3.jpg" alt="Children’s activities, ChildFund programme"></div>
-    <div class="dot"></div>
-    <div class="badge"><div><b>43</b>years in<br>the field</div></div>
-  </div>
-</div></header>
+
+  <!-- Undulating Wave Boundary along bottom of Hero, identical to reference mockup -->
+  <svg class="hero-bottom-wave" viewBox="0 0 1440 80" preserveAspectRatio="none" fill="currentColor" aria-hidden="true">
+    <path d="M0,32 C320,78 680,6 1020,48 C1220,72 1350,28 1440,36 L1440,80 L0,80 Z" />
+  </svg>
+</header>
 
 <!-- METRICS STRIP (Horizontal 5-Stat Pill) -->
 <section class="metrics-strip" id="metrics"><div class="wrap">
@@ -624,7 +753,7 @@ footer{background:var(--green);color:#b9cdbf;padding:6px 0 22px;font-size:12px}
 <svg class="sep" style="--from:var(--paper);--to:var(--sage)" viewBox="0 0 1440 80" preserveAspectRatio="none"><path d="M0 45C240 -5 500 90 760 40S1190 5 1440 50V80H0Z"/></svg>
 
 <section class="more"><div class="wrap">
-  <div><span class="kicker" style="color:var(--orange);">Our Interventions</span><h3 style="margin-top:6px;">Also in our work</h3><p class="sub">Key interventions that run alongside our three main focus areas.</p></div>
+  <div><span class="kicker" style="color:var(--maroon);">Our Interventions</span><h3 style="margin-top:6px;">Also in our work</h3><p class="sub">Key interventions that run alongside our three main focus areas.</p></div>
   <div class="grid">
     <div class="more-item">
       <div class="more-icon" style="background:#fcedf0;color:#801d38;">
@@ -733,7 +862,7 @@ footer{background:var(--green);color:#b9cdbf;padding:6px 0 22px;font-size:12px}
 </div></section>
 
 <!-- Curvy Wave Divider flowing from SDG into Deep Green Footer -->
-<svg class="sep f" style="--from:var(--paper);--to:var(--green)" viewBox="0 0 1440 80" preserveAspectRatio="none"><path d="M0 40C260 95 520 -5 800 45S1200 85 1440 30V80H0Z"/></svg>
+<svg class="sep f" style="--from:var(--paper);--to:#172220" viewBox="0 0 1440 80" preserveAspectRatio="none"><path d="M0 40C260 95 520 -5 800 45S1200 85 1440 30V80H0Z"/></svg>
 <footer><div class="wrap">Homepage prototype for review · Praja Pragati Trust, Regd. 24/83 · 12A &amp; 80G · Designed by Leoaxis Technologies</div></footer>
 
 <script>
